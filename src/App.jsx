@@ -439,13 +439,15 @@ export default function ExecutiveCounsel() {
       {/* Sticky Navigation */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-gradient-to-b from-black via-black to-transparent bg-opacity-90 border-b border-amber-700 border-opacity-30 shadow-lg shadow-black/20">
         <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 md:py-6 flex justify-between items-center h-20 md:h-24">
-          <button onClick={() => scrollToSection('#home')} className="cursor-pointer hover:opacity-80 transition">
-            <div className="text-lg md:text-3xl font-bold tracking-widest font-serif">
-              <span className="gold-text">
-                <span className="hidden md:inline">THE EXECUTIVE COUNSEL</span>
-                <span className="md:hidden text-2xl">TEC</span>
-              </span>
-            </div>
+          <button onClick={() => scrollToSection('#home')} className="cursor-pointer hover:opacity-80 transition flex items-center gap-3">
+            <img
+              src="/headerlogo.png"
+              alt="The Executive Counsel"
+              className="h-12 md:h-16 w-auto"
+            />
+            <span className="gold-text font-serif font-bold tracking-widest hidden sm:inline text-sm md:text-xl">
+              THE EXECUTIVE COUNSEL
+            </span>
           </button>
           
           {/* Desktop Menu */}
@@ -513,9 +515,12 @@ export default function ExecutiveCounsel() {
         <div className="relative z-10 text-center max-w-4xl px-6 md:px-12">
           <p className="text-gold text-xs md:text-sm tracking-widest mb-6 md:mb-8 uppercase fade-in">✦ PRIVATE MEMBERSHIP ORGANIZATION ✦</p>
 
-          <h1 className="text-5xl md:text-7xl font-light mb-6 md:mb-8 leading-tight fade-in" style={{ letterSpacing: '0.05em', animationDelay: '0.1s' }}>
-            The Executive<br />
-            <span className="gold-accent">Counsel</span>
+          <h1 className="fade-in flex justify-center mb-6 md:mb-8" style={{ animationDelay: '0.1s' }}>
+            <img
+              src="/herologo.png"
+              alt="The Executive Counsel"
+              className="w-64 md:w-96 h-auto"
+            />
           </h1>
 
           <p className="text-xl md:text-3xl font-light text-gray-300 mb-6 md:mb-10 tracking-wide fade-in" style={{ animationDelay: '0.2s' }}>
