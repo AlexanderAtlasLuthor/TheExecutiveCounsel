@@ -55,7 +55,7 @@ export default function Home() {
           src="/gold-circle-hero.png"
           alt=""
           aria-hidden="true"
-          className="absolute top-[44%] md:top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none"
+          className="absolute top-[40%] md:top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none"
           style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
         />
 

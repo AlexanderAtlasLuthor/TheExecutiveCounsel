@@ -9,7 +9,7 @@ export default function PageBanner({ eyebrow, title, accent, subtitle }) {
         src="/gold-circle-hero.png"
         alt=""
         aria-hidden="true"
-        className="page-banner-ring absolute top-1/2 left-1/2 w-[28rem] sm:w-[36rem] md:w-[48rem] lg:w-[54rem] aspect-square object-contain pointer-events-none select-none"
+        className="page-banner-ring absolute top-[43%] md:top-1/2 left-1/2 w-[28rem] sm:w-[36rem] md:w-[48rem] lg:w-[54rem] aspect-square object-contain pointer-events-none select-none"
         style={{ animation: 'heroCircleFloat 9s ease-in-out infinite' }}
       />
       <div className="absolute inset-0 hero-glass z-[1]" aria-hidden="true" />
