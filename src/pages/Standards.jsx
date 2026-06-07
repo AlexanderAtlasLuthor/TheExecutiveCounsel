@@ -1,7 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  BadgeCheck,
+  FileSearch,
+  HeartHandshake,
+  MessagesSquare,
+  Scale,
+  ShieldCheck,
+  UserCheck,
+  UsersRound,
+} from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { BrandSection, CTASection, IconBadge } from '../components/BrandSection';
 import { standardsSteps } from '../data';
+
+const stepIcons = [FileSearch, UserCheck, ShieldCheck, UsersRound, MessagesSquare, HeartHandshake];
+
+const principles = [
+  {
+    icon: ShieldCheck,
+    title: 'Privacy',
+    description: 'Members should feel confident that the room respects discretion and professional boundaries.',
+  },
+  {
+    icon: Scale,
+    title: 'Quality',
+    description: 'Selection protects the value of membership by prioritizing character, achievement, and contribution.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Trust',
+    description: 'The counsel is strongest when members know the room has been carefully reviewed.',
+  },
+];
 
 export default function Standards() {
   return (
@@ -13,41 +43,71 @@ export default function Standards() {
         subtitle="Membership is application-based and reviewed by our Membership Committee to preserve trust among members."
       />
 
-      <section className="py-16 md:py-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto fade-in">
-          <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-10 leading-relaxed text-center">
-            Membership is application-based and reviewed by our Membership Committee. The Executive Counsel is intentionally curated to preserve privacy, quality, professionalism, and trust among members.
+      <BrandSection
+        eyebrow="The Standard"
+        title="Membership Is"
+        accent="Earned With Alignment"
+        subtitle="The Executive Counsel is intentionally curated to preserve privacy, quality, professionalism, and trust among members."
+      >
+        <div className="quote-panel p-8 md:p-12 fade-in max-w-4xl mx-auto text-center">
+          <p className="text-xl md:text-2xl italic text-gray-300 leading-relaxed">
+            "Membership is earned through character, achievement, and contribution."
           </p>
-
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 md:p-10 border-l-4 gold-border mb-12 md:mb-16">
-            <p className="text-lg md:text-xl italic text-gray-300">
-              "Membership is earned through character, achievement, and contribution."
-            </p>
-          </div>
-
-          <p className="text-gold text-xs md:text-sm tracking-widest mb-8 uppercase text-center">The Review Process</p>
-
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            {standardsSteps.map((req, idx) => (
-              <div key={idx} className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-gold bg-opacity-20 border border-gold rounded-full flex items-center justify-center flex-shrink-0 text-gold text-sm font-semibold">
-                  {idx + 1}
-                </div>
-                <span className="text-gray-300 text-base md:text-lg pt-1">{req}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-16 fade-in" style={{ animationDelay: '0.3s' }}>
-            <Link
-              to="/apply"
-              className="btn-gold inline-block px-10 md:px-12 py-3.5 md:py-4 text-sm tracking-widest rounded-sm"
-            >
-              SUBMIT YOUR APPLICATION
-            </Link>
-          </div>
         </div>
-      </section>
+      </BrandSection>
+
+      <BrandSection
+        eyebrow="Review Process"
+        title="A Clear Path"
+        accent="To Private Review"
+        subtitle="The process is designed to protect the room while giving qualified candidates a professional, respectful path to consideration."
+        tone="alt"
+      >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {standardsSteps.map((step, idx) => {
+            const StepIcon = stepIcons[idx % stepIcons.length];
+            return (
+              <article key={step} className="brand-card p-7 md:p-8 fade-in h-full" style={{ animationDelay: `${idx * 0.07}s` }}>
+                <div className="flex flex-col sm:flex-row sm:items-start gap-5 text-center sm:text-left">
+                  <IconBadge icon={StepIcon} label={step} />
+                  <div>
+                    <p className="gold-text text-xs tracking-[0.22em] uppercase mb-3">Step 0{idx + 1}</p>
+                    <h3 className="text-lg md:text-xl font-light">{step}</h3>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </BrandSection>
+
+      <BrandSection
+        eyebrow="Selection Principles"
+        title="Exclusivity With"
+        accent="A Clear Purpose"
+        subtitle="Selectivity is not about being inaccessible. It is about protecting the quality of the room for every member who enters it."
+      >
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {principles.map((principle, idx) => (
+            <article key={principle.title} className="brand-card p-8 md:p-10 text-center fade-in h-full" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <IconBadge icon={principle.icon} label={principle.title} className="mb-7" />
+              <h3 className="text-xl md:text-2xl font-light mb-4">{principle.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{principle.description}</p>
+            </article>
+          ))}
+        </div>
+      </BrandSection>
+
+      <CTASection
+        eyebrow="Application"
+        title="Submit for"
+        accent="Membership Consideration"
+        subtitle="Candidates may begin with a private inquiry. The review process determines alignment and availability."
+        actions={[
+          { label: 'Submit Your Application', to: '/apply' },
+          { label: 'Explore Membership', to: '/membership', variant: 'outline' },
+        ]}
+      />
     </>
   );
 }

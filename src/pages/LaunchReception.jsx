@@ -1,6 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  BadgeCheck,
+  BadgeDollarSign,
+  GlassWater,
+  MapPin,
+  Music,
+  Presentation,
+  Sparkles,
+  Ticket,
+  UsersRound,
+  Wine,
+} from 'lucide-react';
 import PageBanner from '../components/PageBanner';
+import { BrandSection, CTASection, IconBadge } from '../components/BrandSection';
+
+const details = [
+  { icon: MapPin, label: 'Luxury Venue', value: 'South Florida' },
+  { icon: UsersRound, label: 'Guest List', value: '100 Invited Guests' },
+  { icon: BadgeCheck, label: 'Dress Code', value: 'Business Elegant' },
+  { icon: Ticket, label: 'Ticket Price', value: '$199' },
+  { icon: BadgeDollarSign, label: 'VIP Tables', value: '$2,500 Sponsor Tables' },
+  { icon: MapPin, label: 'Target Cities', value: 'Miami, Fort Lauderdale, Boca Raton' },
+];
+
+const program = [
+  { icon: GlassWater, title: 'Cocktail Reception', description: 'A polished arrival experience with a curated guest mix.' },
+  { icon: Sparkles, title: 'Curated Introductions', description: 'Hosted connection moments that help the right people meet.' },
+  { icon: Music, title: 'Live Music', description: 'An elegant atmosphere designed for conversation and energy.' },
+  { icon: Wine, title: 'Champagne Toast', description: 'A formal welcome to the founding class and launch guests.' },
+  { icon: Presentation, title: 'Membership Presentation', description: 'A concise look at the counsel, standards, and founding opportunity.' },
+];
 
 export default function LaunchReception() {
   return (
@@ -12,57 +41,63 @@ export default function LaunchReception() {
         subtitle="An invitation-only launch bringing together a curated guest list of South Florida's accomplished leaders."
       />
 
-      <section className="py-16 md:py-24 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto fade-in">
-          <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-black border-2 gold-border border-opacity-30 p-8 md:p-12 rounded-lg">
-            <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-10 leading-relaxed">
-              Join us for the exclusive inaugural launch of The Executive Counsel in South Florida. This invitation-only reception will bring together a curated guest list of entrepreneurs, executives, professionals, investors, and community leaders.
+      <BrandSection
+        eyebrow="Launch Overview"
+        title="A First Room"
+        accent="With Lasting Intention"
+        subtitle="The inaugural reception introduces The Executive Counsel through the same principles that will define membership: privacy, polish, selectivity, and meaningful connection."
+      >
+        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 md:gap-10 items-stretch">
+          <article className="brand-card p-8 md:p-12 fade-in h-full flex flex-col justify-center">
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+              Join us for the exclusive inaugural launch of The Executive Counsel in South Florida. This invitation-only reception will bring together entrepreneurs, executives, professionals, investors, and community leaders in a refined private setting.
             </p>
+            <p className="text-gray-500 text-sm italic">
+              Attendance is limited and subject to invitation approval.
+            </p>
+          </article>
 
-            <div className="grid md:grid-cols-2 gap-8 mb-8 md:mb-10">
-              <div>
-                <p className="text-gold text-xs tracking-widest mb-4">EVENT DETAILS</p>
-                <div className="space-y-3 text-gray-300 text-base">
-                  <p>✦ <span className="font-semibold">Luxury Venue</span>, South Florida</p>
-                  <p>✦ <span className="font-semibold">100 Invited Guests</span></p>
-                  <p>✦ <span className="font-semibold">Business Elegant</span> Dress Code</p>
-                  <p>✦ <span className="font-semibold">$199</span> Ticket Price</p>
-                  <p>✦ <span className="font-semibold">$2,500</span> VIP Sponsor Tables</p>
-                </div>
-                <p className="text-gold text-xs tracking-widest mt-6 mb-3">TARGET CITIES</p>
-                <p className="text-gray-300 text-base">Miami &middot; Fort Lauderdale &middot; Boca Raton</p>
-              </div>
-              <div>
-                <p className="text-gold text-xs tracking-widest mb-4">PROGRAM</p>
-                <div className="space-y-3 text-gray-300 text-base">
-                  <p>✦ Cocktail Reception</p>
-                  <p>✦ Curated Introductions</p>
-                  <p>✦ Live Music</p>
-                  <p>✦ Champagne Toast</p>
-                  <p>✦ Membership Presentation</p>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-gray-500 text-sm italic mb-8">Attendance is limited and subject to invitation approval.</p>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <Link
-                to="/apply"
-                className="btn-gold px-8 md:px-10 py-3 md:py-4 text-sm tracking-widest flex-1 text-center rounded-sm"
-              >
-                REQUEST LAUNCH INVITATION
-              </Link>
-              <Link
-                to="/sponsorship"
-                className="btn-outline px-8 md:px-10 py-3 md:py-4 text-sm tracking-widest flex-1 text-center rounded-sm"
-              >
-                SPONSOR A TABLE
-              </Link>
-            </div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {details.map((detail, idx) => (
+              <article key={`${detail.label}-${detail.value}`} className="brand-card p-6 fade-in min-h-40" style={{ animationDelay: `${idx * 0.05}s` }}>
+                <IconBadge icon={detail.icon} label={detail.label} className="mb-5" />
+                <p className="text-gold text-xs tracking-[0.24em] uppercase mb-2">{detail.label}</p>
+                <p className="text-gray-200 text-lg font-light">{detail.value}</p>
+              </article>
+            ))}
           </div>
         </div>
-      </section>
+      </BrandSection>
+
+      <BrandSection
+        eyebrow="Reception Program"
+        title="A Polished"
+        accent="Evening Flow"
+        subtitle="The program is paced to create arrival energy, meaningful introductions, and a clear sense of what the counsel is becoming."
+        tone="alt"
+      >
+        <div className="grid lg:grid-cols-5 gap-5 md:gap-6">
+          {program.map((item, idx) => (
+            <article key={item.title} className="brand-card p-6 md:p-7 text-center fade-in h-full" style={{ animationDelay: `${idx * 0.06}s` }}>
+              <IconBadge icon={item.icon} label={item.title} className="mb-5" />
+              <p className="gold-text text-xs tracking-[0.2em] uppercase mb-3">0{idx + 1}</p>
+              <h3 className="text-lg md:text-xl font-light mb-3">{item.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </BrandSection>
+
+      <CTASection
+        eyebrow="Limited Attendance"
+        title="Request Access to the"
+        accent="Inaugural Reception"
+        subtitle="Guests may request invitation consideration or explore sponsor table opportunities for the launch."
+        actions={[
+          { label: 'Request Launch Invitation', to: '/apply' },
+          { label: 'Sponsor a Table', to: '/sponsorship', variant: 'outline' },
+        ]}
+      />
     </>
   );
 }

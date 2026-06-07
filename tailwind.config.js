@@ -11,6 +11,20 @@ export default {
         gold: '#d4af37',
         'gold-light': '#f4d03f',
         charcoal: '#1a1a1a',
+        // Warm neutral grays (no blue tint) — pure black & gold palette
+        gray: {
+          50: '#faf9f7',
+          100: '#f2f0ec',
+          200: '#e3e0d9',
+          300: '#cbc7bd',
+          400: '#a8a399',
+          500: '#827d73',
+          600: '#5f5b53',
+          700: '#403d38',
+          800: '#26241f',
+          900: '#161512',
+          950: '#0c0b09',
+        },
       },
       fontFamily: {
         serif: ["'Playfair Display'", 'Cinzel', 'Georgia', 'serif'],

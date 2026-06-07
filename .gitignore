@@ -16,3 +16,6 @@ yarn-error.log*
 .idea/
 .vscode/
 *.local
+
+# Large source video (use compressed founding-member-bg.mp4 instead)
+public/Become a Founding Member bg.mp4

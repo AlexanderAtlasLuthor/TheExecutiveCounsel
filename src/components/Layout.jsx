@@ -78,37 +78,38 @@ export default function Layout() {
           </button>
         </div>
         <div className="header-divider" aria-hidden="true" />
+      </nav>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="mobile-menu-overlay lg:hidden">
-            <div className="px-6 md:px-8 py-12 space-y-8 max-h-screen overflow-y-auto">
-              {navigationLinks.map((link) => (
-                <NavLink
-                  key={link.name}
-                  to={link.path}
-                  end={link.path === '/'}
-                  className={({ isActive }) =>
-                    `block w-full text-left text-xl md:text-2xl tracking-widest font-light transition-colors duration-300 ${
-                      isActive ? 'text-gold' : 'text-gray-200 hover:text-gold'
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-              <div className="pt-8 border-t border-gold border-opacity-40">
-                <Link
-                  to="/apply"
-                  className="btn-gold block w-full py-4 text-sm tracking-widest font-semibold text-center rounded-sm"
-                >
-                  APPLY NOW
-                </Link>
-              </div>
+      {/* Mobile Menu — rendered outside <nav> so the header's backdrop-filter
+          does not trap this fixed overlay behind the page content. */}
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay lg:hidden">
+          <div className="px-6 md:px-8 py-12 space-y-8 max-h-screen overflow-y-auto">
+            {navigationLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                end={link.path === '/'}
+                className={({ isActive }) =>
+                  `block w-full text-left text-xl md:text-2xl tracking-widest font-light transition-colors duration-300 ${
+                    isActive ? 'text-gold' : 'text-gray-200 hover:text-gold'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+            <div className="pt-8 border-t border-gold border-opacity-40">
+              <Link
+                to="/apply"
+                className="btn-gold block w-full py-4 text-sm tracking-widest font-semibold text-center rounded-sm"
+              >
+                APPLY NOW
+              </Link>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
 
       {/* Routed page content */}
       <main className="pt-20 md:pt-24">
@@ -116,7 +117,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-amber-700 border-opacity-20 py-12 md:py-16 px-6 md:px-12">
+      <footer className="border-t border-amber-700 border-opacity-20 py-12 md:py-16 px-6 md:px-12 text-center md:text-left">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 mb-12 md:mb-16">
             <div>
@@ -147,22 +148,22 @@ export default function Layout() {
                 <Link to="/apply" className="block hover:text-gold transition-colors">Apply</Link>
               </div>
             </div>
-            <div>
+            <div className="min-w-0">
               <p className="gold-text text-xs font-bold tracking-widest mb-4">CONTACT</p>
               <div className="space-y-3 text-sm text-gray-400">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <Phone size={16} className="text-gold flex-shrink-0" />
                   <span>(305) 555-0123</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2 min-w-0">
                   <Mail size={16} className="text-gold flex-shrink-0" />
-                  <span>Membership@ExecutiveCounsel.com</span>
+                  <span className="min-w-0 break-all">Membership@ExecutiveCounsel.com</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <Globe size={16} className="text-gold flex-shrink-0" />
                   <span>ExecutiveCounsel.com</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center justify-center md:justify-start gap-2">
                   <Instagram size={16} className="text-gold flex-shrink-0" />
                   <span>@ExecutiveCounsel</span>
                 </div>

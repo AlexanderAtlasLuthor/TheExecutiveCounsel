@@ -1,7 +1,79 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  BadgeCheck,
+  CalendarDays,
+  Compass,
+  Handshake,
+  Landmark,
+  MessagesSquare,
+  Plane,
+  ShieldCheck,
+  UserRoundPlus,
+  Wine,
+} from 'lucide-react';
 import PageBanner from '../components/PageBanner';
-import { features } from '../data';
+import { BrandSection, CTASection, IconBadge } from '../components/BrandSection';
+
+const featureCards = [
+  {
+    icon: UserRoundPlus,
+    title: 'Curated Introductions',
+    description: 'Introductions are made with context so members meet people worth knowing, not just more people.',
+  },
+  {
+    icon: CalendarDays,
+    title: 'Exclusive Social Events',
+    description: 'Gatherings are planned around atmosphere, conversation, and member-level access.',
+  },
+  {
+    icon: Landmark,
+    title: 'Executive Networking',
+    description: 'Rooms are built for founders, investors, professionals, and leaders with shared standards.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'VIP Experiences',
+    description: 'Members receive access to elevated experiences that feel private, polished, and selective.',
+  },
+  {
+    icon: Wine,
+    title: 'Private Dinners',
+    description: 'Smaller tables create the conditions for trust, depth, and lasting personal connection.',
+  },
+  {
+    icon: Plane,
+    title: 'Luxury Travel',
+    description: 'Select retreats and travel concepts extend the counsel beyond a single evening.',
+  },
+  {
+    icon: Handshake,
+    title: 'Community Engagement',
+    description: 'Members can connect through civic, philanthropic, and professional moments with purpose.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Invitation-Only Access',
+    description: 'Privacy and standards are protected through a selective application and review process.',
+  },
+];
+
+const membershipRhythm = [
+  {
+    icon: Compass,
+    title: 'Find Better Rooms',
+    description: 'Move beyond random mixers into gatherings designed around relevance and alignment.',
+  },
+  {
+    icon: MessagesSquare,
+    title: 'Create Better Conversations',
+    description: 'Smaller formats and thoughtful hosting make it easier to move past surface-level introductions.',
+  },
+  {
+    icon: Handshake,
+    title: 'Build Better Relationships',
+    description: 'The counsel gives members recurring opportunities to become known, trusted, and remembered.',
+  },
+];
 
 export default function WhyJoin() {
   return (
@@ -13,27 +85,51 @@ export default function WhyJoin() {
         subtitle="Every membership unlocks a world of curated experiences built around trust, access, and genuine connection."
       />
 
-      <section className="py-16 md:py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {features.map((feature, idx) => (
-              <div key={idx} className="feature-card p-6 md:p-8 text-center fade-in flex flex-col items-center justify-center min-h-40" style={{ animationDelay: `${idx * 0.05}s` }}>
-                <div className="text-4xl md:text-5xl gold-text mb-4 font-light">{feature.icon}</div>
-                <h3 className="text-base md:text-lg font-light">{feature.title}</h3>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-16 fade-in" style={{ animationDelay: '0.3s' }}>
-            <Link
-              to="/membership"
-              className="btn-outline inline-block px-10 md:px-12 py-3.5 md:py-4 text-sm tracking-widest rounded-sm"
-            >
-              EXPLORE MEMBERSHIP LEVELS
-            </Link>
-          </div>
+      <BrandSection
+        eyebrow="Member Value"
+        title="Access With"
+        accent="Purpose and Structure"
+        subtitle="The Executive Counsel is designed to make the room itself more valuable: who attends, why they are there, and how relationships are introduced all matter."
+      >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          {featureCards.map((feature, idx) => (
+            <article key={feature.title} className="brand-card p-6 md:p-7 text-center fade-in min-h-72 flex flex-col items-center" style={{ animationDelay: `${idx * 0.04}s` }}>
+              <IconBadge icon={feature.icon} label={feature.title} className="mb-5" />
+              <h3 className="text-lg md:text-xl font-light mb-3">{feature.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+            </article>
+          ))}
         </div>
-      </section>
+      </BrandSection>
+
+      <BrandSection
+        eyebrow="The Difference"
+        title="A Membership That"
+        accent="Compounds Over Time"
+        subtitle="The value is not a single event. It is a repeated rhythm of selective rooms, real conversation, and relationships that can deepen with each encounter."
+        tone="alt"
+      >
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {membershipRhythm.map((item, idx) => (
+            <article key={item.title} className="brand-card p-8 md:p-10 text-center fade-in h-full" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <IconBadge icon={item.icon} label={item.title} className="mb-7" />
+              <h3 className="text-xl md:text-2xl font-light mb-4">{item.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </BrandSection>
+
+      <CTASection
+        eyebrow="Membership"
+        title="Choose the"
+        accent="Right Level of Access"
+        subtitle="Each level is built for a different relationship to the counsel, from essential access to elevated concierge-level involvement."
+        actions={[
+          { label: 'Explore Membership Levels', to: '/membership' },
+          { label: 'Review Standards', to: '/standards', variant: 'outline' },
+        ]}
+      />
     </>
   );
 }

@@ -11,7 +11,6 @@ export const navigationLinks = [
   { name: 'Sponsorship', path: '/sponsorship' },
   { name: 'Standards', path: '/standards' },
   { name: 'Vision', path: '/vision' },
-  { name: 'Apply', path: '/apply' },
 ];
 
 export const membershipTiers = [
@@ -63,14 +62,14 @@ export const membershipTiers = [
 ];
 
 export const features = [
-  { icon: '◆', title: 'Curated Introductions' },
-  { icon: '◇', title: 'Exclusive Social Events' },
-  { icon: '▲', title: 'Executive Networking' },
-  { icon: '●', title: 'VIP Experiences' },
-  { icon: '◈', title: 'Private Dinners' },
-  { icon: '▬', title: 'Luxury Travel' },
-  { icon: '⬥', title: 'Community Engagement' },
-  { icon: '○', title: 'Invitation-Only Access' },
+  { iconKey: 'user-round-plus', title: 'Curated Introductions' },
+  { iconKey: 'calendar-days', title: 'Exclusive Social Events' },
+  { iconKey: 'landmark', title: 'Executive Networking' },
+  { iconKey: 'badge-check', title: 'VIP Experiences' },
+  { iconKey: 'wine', title: 'Private Dinners' },
+  { iconKey: 'plane', title: 'Luxury Travel' },
+  { iconKey: 'handshake', title: 'Community Engagement' },
+  { iconKey: 'shield-check', title: 'Invitation-Only Access' },
 ];
 
 export const events = [
@@ -78,25 +77,25 @@ export const events = [
     title: 'Executive Counsel Soirée',
     frequency: 'Monthly',
     description: 'An elegant evening of cocktails, networking, and curated introductions for accomplished professionals.',
-    icon: '◇',
+    iconKey: 'wine',
   },
   {
     title: 'Black Tie Connections Gala',
     frequency: 'Quarterly',
     description: 'A formal gala featuring live entertainment, philanthropy, and executive-level networking.',
-    icon: '▲',
+    iconKey: 'crown',
   },
   {
     title: 'Founders & Leaders Dinner',
     frequency: 'Invitation Only',
     description: 'An intimate dinner experience for CEOs, business owners, investors, and industry leaders.',
-    icon: '◆',
+    iconKey: 'utensils',
   },
   {
     title: 'Executive Weekend Retreats',
     frequency: 'Quarterly',
     description: 'Luxury travel experiences designed to strengthen relationships among members.',
-    icon: '⬥',
+    iconKey: 'plane',
   },
 ];
 

@@ -1,113 +1,145 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  CalendarDays,
+  Crown,
+  Handshake,
+  MapPinned,
+  ShieldCheck,
+  UsersRound,
+} from 'lucide-react';
+import { BrandSection, CTASection, IconBadge } from '../components/BrandSection';
+import HeroNextButton from '../components/HeroNextButton';
+
+const foundingCards = [
+  {
+    icon: Crown,
+    title: 'Limited Founding Access',
+    description: 'Applications are reviewed privately and accepted selectively so the first class sets the tone with care.',
+  },
+  {
+    icon: MapPinned,
+    title: 'South Florida Launch',
+    description: 'Initial membership focus includes Miami, Fort Lauderdale, Boca Raton, and Palm Beach.',
+  },
+  {
+    icon: UsersRound,
+    title: 'Private Member Community',
+    description: 'Designed for accomplished individuals seeking meaningful personal and professional relationships.',
+  },
+];
+
+const experienceCards = [
+  {
+    icon: Handshake,
+    title: 'Curated Introductions',
+    description: 'Members are brought into rooms where context, reputation, and mutual relevance matter.',
+  },
+  {
+    icon: CalendarDays,
+    title: 'Signature Gatherings',
+    description: 'Private receptions, dinners, and member experiences are structured for real conversation.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Membership Standards',
+    description: 'Every layer of the counsel is designed around privacy, professionalism, and trust.',
+  },
+];
 
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-6rem)] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-gradient-to-b from-[#15110a] via-black to-black">
-        {/* Single centered gold circle image (transparent background) */}
+      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#15110a] via-black to-black">
         <img
           src="/gold-circle-hero.png"
           alt=""
           aria-hidden="true"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] sm:w-[26rem] md:w-[38rem] aspect-square object-contain pointer-events-none select-none"
-          style={{ animation: 'float 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
+          className="absolute top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none -translate-y-12 md:translate-y-0"
+          style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
         />
 
-        {/* Contrast & glow overlay */}
-        <div className="absolute inset-0 hero-overlay z-[1]" aria-hidden="true" />
+        <div className="absolute inset-0 hero-glass z-[1]" aria-hidden="true" />
+        <div className="absolute inset-0 hero-overlay z-[2]" aria-hidden="true" />
 
-        <div className="relative z-10 text-center max-w-3xl px-6 md:px-12">
-          <p className="text-gold text-[0.7rem] md:text-xs tracking-[0.35em] mb-7 md:mb-9 uppercase fade-in hero-sub">✦ Private Membership Organization ✦</p>
+        <div className="relative z-10 text-center max-w-3xl px-6 md:px-12 -translate-y-6 md:-translate-y-8">
+          <p className="text-gold text-[0.7rem] md:text-xs tracking-[0.35em] mb-5 md:mb-6 uppercase fade-in hero-sub">✦ Private Membership Organization ✦</p>
 
-          <h1 className="fade-in flex justify-center mb-8 md:mb-10" style={{ animationDelay: '0.1s' }}>
+          <h1 className="fade-in flex justify-center mb-6 md:mb-7" style={{ animationDelay: '0.1s' }}>
             <img
               src="/herologo-transparent.png"
               alt="The Executive Counsel"
-              className="hero-logo-glow w-60 sm:w-72 md:w-[26rem] h-auto"
+              className="hero-logo-glow w-52 sm:w-64 md:w-[20rem] h-auto"
             />
           </h1>
 
-          <h2 className="hero-title text-2xl sm:text-3xl md:text-4xl font-light text-white mb-6 md:mb-8 tracking-wide leading-snug fade-in" style={{ fontFamily: "'Playfair Display', Georgia, serif", animationDelay: '0.2s' }}>
+          <h2 className="hero-title text-2xl sm:text-3xl md:text-4xl font-light text-white mb-5 md:mb-6 tracking-wide leading-snug fade-in" style={{ fontFamily: "'Playfair Display', Georgia, serif", animationDelay: '0.2s' }}>
             Where Accomplished People<br className="hidden sm:block" /> Meet Accomplished People
           </h2>
 
-          <p className="hero-sub text-base md:text-xl text-gray-200 max-w-2xl mx-auto mb-7 md:mb-9 leading-relaxed font-light fade-in" style={{ animationDelay: '0.3s' }}>
-            A private, invitation-only membership counsel for executives, entrepreneurs, investors, professionals, and community leaders seeking meaningful personal and professional connections.
-          </p>
-
-          <p className="hero-sub text-xs md:text-sm text-gray-400 italic mb-9 md:mb-11 fade-in" style={{ animationDelay: '0.4s' }}>
-            Applications are reviewed privately. Attendance is limited. Membership is not guaranteed.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center fade-in" style={{ animationDelay: '0.5s' }}>
-            <Link
-              to="/apply"
-              className="btn-gold px-8 md:px-10 py-3.5 md:py-4 text-sm tracking-[0.15em] rounded-sm"
-            >
-              APPLY FOR MEMBERSHIP
+          <div className="btn-row fade-in" style={{ animationDelay: '0.3s' }}>
+            <Link to="/apply" className="btn-gold btn-standard rounded-sm">
+              Apply for Membership
             </Link>
-            <Link
-              to="/launch"
-              className="btn-outline px-8 md:px-10 py-3.5 md:py-4 text-sm tracking-[0.15em] rounded-sm"
-            >
-              REQUEST AN INVITATION
+            <Link to="/launch" className="btn-outline btn-standard rounded-sm">
+              Request an Invitation
             </Link>
           </div>
         </div>
+        <HeroNextButton />
       </section>
 
-      {/* Founding Members Section */}
-      <section className="py-20 md:py-32 px-6 md:px-12 bg-gray-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 md:mb-20 fade-in">
-            <p className="text-gold text-xs md:text-sm tracking-widest mb-4 uppercase">✦ NOW ACCEPTING ✦</p>
-            <h2 className="text-4xl md:text-5xl font-light mb-6 md:mb-8">
-              Become a<br />
-              <span className="gold-accent">Founding Member</span>
-            </h2>
-            <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              The Executive Counsel is now accepting a limited number of founding membership applications in South Florida. Founding members will help shape the culture, standards, and first signature experiences of the counsel.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-12">
-            {[
-              {
-                icon: '▲',
-                title: 'Limited Founding Access',
-                description: 'Applications are reviewed privately and accepted selectively.'
-              },
-              {
-                icon: '◆',
-                title: 'South Florida Launch',
-                description: 'Initial membership focus includes Miami, Fort Lauderdale, Boca Raton, and Palm Beach.'
-              },
-              {
-                icon: '○',
-                title: 'Private Member Community',
-                description: 'Designed for accomplished individuals seeking meaningful personal and professional relationships.'
-              },
-            ].map((card, idx) => (
-              <div key={idx} className="founding-card p-8 md:p-10 text-center fade-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="text-5xl md:text-6xl gold-text mb-6 font-light">{card.icon}</div>
-                <h3 className="text-xl md:text-2xl font-light mb-4">{card.title}</h3>
-                <p className="text-gray-400 text-base leading-relaxed">{card.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center fade-in" style={{ animationDelay: '0.3s' }}>
-            <Link
-              to="/apply"
-              className="btn-gold inline-block px-10 md:px-12 py-3 md:py-4 text-sm md:text-base tracking-widest rounded-sm"
-            >
-              APPLY AS A FOUNDING MEMBER
-            </Link>
-          </div>
+      <BrandSection
+        eyebrow="Now Accepting"
+        title="Become a"
+        accent="Founding Member"
+        subtitle="The Executive Counsel is accepting a limited number of founding membership applications. Founding members will help shape the culture, standards, and first signature experiences of the counsel."
+        tone="alt"
+      >
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {foundingCards.map((card, idx) => (
+            <article key={card.title} className="brand-card p-8 md:p-10 text-center fade-in h-full" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <IconBadge icon={card.icon} label={card.title} className="mb-7" />
+              <h3 className="text-xl md:text-2xl font-light mb-4">{card.title}</h3>
+              <p className="text-gray-400 text-base leading-relaxed">{card.description}</p>
+            </article>
+          ))}
         </div>
-      </section>
+
+        <div className="btn-row mt-12 fade-in" style={{ animationDelay: '0.3s' }}>
+          <Link to="/apply" className="btn-gold btn-standard rounded-sm">
+            Apply as a Founding Member
+          </Link>
+        </div>
+      </BrandSection>
+
+      <BrandSection
+        eyebrow="The Experience"
+        title="A Counsel Built for"
+        accent="Meaningful Access"
+        subtitle="Every touchpoint is structured around the same idea: private review, thoughtful introductions, refined experiences, and relationships that can deepen over time."
+      >
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {experienceCards.map((card, idx) => (
+            <article key={card.title} className="brand-card p-8 md:p-10 text-center fade-in h-full" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <IconBadge icon={card.icon} label={card.title} className="mb-7" />
+              <h3 className="text-xl md:text-2xl font-light mb-4">{card.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{card.description}</p>
+            </article>
+          ))}
+        </div>
+      </BrandSection>
+
+      <CTASection
+        eyebrow="Private Review"
+        title="Begin With a"
+        accent="Membership Inquiry"
+        subtitle="Applications are reviewed privately. Attendance is limited, and membership is extended only when there is clear alignment with the counsel."
+        actions={[
+          { label: 'Begin Your Application', to: '/apply' },
+          { label: 'Explore Membership', to: '/membership', variant: 'outline' },
+        ]}
+      />
     </>
   );
 }
