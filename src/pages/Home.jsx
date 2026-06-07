@@ -52,7 +52,7 @@ export default function Home() {
     <>
       <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#15110a] via-black to-black">
         <img
-          src="/ec-mark-transparent.png"
+          src="/gold-circle-hero.png"
           alt=""
           aria-hidden="true"
           className="absolute top-[44%] md:top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none"
