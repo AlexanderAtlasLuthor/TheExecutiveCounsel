@@ -6,11 +6,13 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-6rem)] flex items-center justify-center pt-16 pb-20 overflow-hidden bg-gradient-to-b from-[#15110a] via-black to-black">
-        {/* Single centered gold circle */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] sm:w-[26rem] md:w-[38rem] aspect-square border gold-border border-opacity-20 rounded-full pointer-events-none"
-          style={{ animation: 'float 9s ease-in-out infinite' }}
+        {/* Single centered gold circle image (transparent background) */}
+        <img
+          src="/gold-circle-hero.png"
+          alt=""
           aria-hidden="true"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[20rem] sm:w-[26rem] md:w-[38rem] aspect-square object-contain pointer-events-none select-none"
+          style={{ animation: 'float 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
         />
 
         {/* Contrast & glow overlay */}
