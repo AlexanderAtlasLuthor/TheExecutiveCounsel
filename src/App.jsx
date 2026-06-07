@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, ArrowRight, Check, Menu, X } from 'lucide-react';
+import { Mail, Phone, Globe, Instagram, Check, Menu, X } from 'lucide-react';
 
 export default function ExecutiveCounsel() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,7 +13,8 @@ export default function ExecutiveCounsel() {
     company: '',
     role: '',
     membershipLevel: 'gold',
-    interestType: 'membership',
+    attendInaugural: '',
+    interestSponsorship: '',
     message: '',
   });
 
@@ -26,6 +27,7 @@ export default function ExecutiveCounsel() {
     { name: 'Launch Reception', href: '#launch' },
     { name: 'Sponsorship', href: '#sponsorship' },
     { name: 'Standards', href: '#standards' },
+    { name: 'Vision', href: '#vision' },
     { name: 'Apply', href: '#apply' },
   ];
 
@@ -72,7 +74,8 @@ export default function ExecutiveCounsel() {
         company: '',
         role: '',
         membershipLevel: 'gold',
-        interestType: 'membership',
+        attendInaugural: '',
+        interestSponsorship: '',
         message: '',
       });
     }, 5000);
@@ -119,7 +122,8 @@ export default function ExecutiveCounsel() {
         'Private curated member dinners',
         'VIP reception access',
         'Executive advisory access',
-        'Exclusive investor events',
+        'Founder-level recognition',
+        'Exclusive investor & executive events',
       ],
       label: 'Concierge Access',
     },
@@ -207,7 +211,7 @@ export default function ExecutiveCounsel() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen" style={{ fontFamily: "'Georgia', serif" }}>
+    <div className="bg-black text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
       <style>{`
         html {
           scroll-behavior: smooth;
@@ -436,7 +440,7 @@ export default function ExecutiveCounsel() {
       <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-gradient-to-b from-black via-black to-transparent bg-opacity-90 border-b border-amber-700 border-opacity-30 shadow-lg shadow-black/20">
         <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 md:py-6 flex justify-between items-center h-20 md:h-24">
           <button onClick={() => scrollToSection('#home')} className="cursor-pointer hover:opacity-80 transition">
-            <div className="text-lg md:text-3xl font-bold tracking-widest">
+            <div className="text-lg md:text-3xl font-bold tracking-widest font-serif">
               <span className="gold-text">
                 <span className="hidden md:inline">THE EXECUTIVE COUNSEL</span>
                 <span className="md:hidden text-2xl">TEC</span>
@@ -573,7 +577,7 @@ export default function ExecutiveCounsel() {
               </p>
 
               <div className="space-y-3 md:space-y-4">
-                {['CEOs & Entrepreneurs', 'Executives & Investors', 'Attorneys & Physicians', 'Community Leaders'].map((item, idx) => (
+                {['CEOs & Entrepreneurs', 'Executives & Investors', 'Attorneys & Physicians', 'Business Owners', 'Retired Professionals', 'Community Leaders'].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                     <span className="text-gray-300 text-base md:text-lg">{item}</span>
@@ -769,11 +773,14 @@ export default function ExecutiveCounsel() {
               <div>
                 <p className="text-gold text-xs tracking-widest mb-4">EVENT DETAILS</p>
                 <div className="space-y-3 text-gray-300 text-base">
+                  <p>✦ <span className="font-semibold">Luxury Venue</span>, South Florida</p>
                   <p>✦ <span className="font-semibold">100 Invited Guests</span></p>
                   <p>✦ <span className="font-semibold">Business Elegant</span> Dress Code</p>
                   <p>✦ <span className="font-semibold">$199</span> Ticket Price</p>
-                  <p>✦ <span className="font-semibold">South Florida</span> Location</p>
+                  <p>✦ <span className="font-semibold">$2,500</span> VIP Sponsor Tables</p>
                 </div>
+                <p className="text-gold text-xs tracking-widest mt-6 mb-3">TARGET CITIES</p>
+                <p className="text-gray-300 text-base">Miami &middot; Fort Lauderdale &middot; Boca Raton</p>
               </div>
               <div>
                 <p className="text-gold text-xs tracking-widest mb-4">PROGRAM</p>
@@ -781,6 +788,7 @@ export default function ExecutiveCounsel() {
                   <p>✦ Cocktail Reception</p>
                   <p>✦ Curated Introductions</p>
                   <p>✦ Live Music</p>
+                  <p>✦ Champagne Toast</p>
                   <p>✦ Membership Presentation</p>
                 </div>
               </div>
@@ -816,8 +824,19 @@ export default function ExecutiveCounsel() {
               <span className="gold-accent">& Partnership Tiers</span>
             </h2>
             <p className="text-base md:text-lg text-gray-400 max-w-3xl mx-auto">
-              The Executive Counsel offers premium sponsorship opportunities for brands and firms seeking to connect with affluent professionals and business leaders.
+              The Executive Counsel offers premium sponsorship opportunities for brands and firms seeking to connect with affluent professionals, business owners, executives, investors, and community leaders.
             </p>
+          </div>
+
+          <div className="mb-12 md:mb-16 fade-in">
+            <p className="text-gold text-xs md:text-sm tracking-widest mb-6 uppercase text-center">Ideal Sponsors</p>
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
+              {['Wealth Management Firms', 'Luxury Automobile Dealerships', 'Private Aviation Companies', 'Law Firms', 'Accounting Firms', 'Luxury Real Estate Brokerages', 'Medical Practices', 'Insurance Agencies'].map((s, idx) => (
+                <span key={idx} className="border border-gold border-opacity-30 rounded-full px-4 md:px-5 py-2 text-sm text-gray-300 bg-gold/5">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12 md:mb-16">
@@ -842,7 +861,7 @@ export default function ExecutiveCounsel() {
               onClick={() => scrollToSection('#apply')}
               className="btn-gold px-10 md:px-12 py-3 md:py-4 text-sm md:text-base tracking-widest"
             >
-              REQUEST SPONSORSHIP PACKAGE
+              BECOME A SPONSOR
             </button>
           </div>
         </div>
@@ -882,8 +901,33 @@ export default function ExecutiveCounsel() {
         </div>
       </section>
 
+      {/* Vision Section */}
+      <section id="vision" className="py-20 md:py-32 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto text-center fade-in">
+          <p className="text-gold text-xs md:text-sm tracking-widest mb-4 uppercase">✦ OUR VISION ✦</p>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 md:mb-8 leading-tight">
+            Building South Florida's Premier<br />
+            <span className="gold-accent">Executive Membership Community</span>
+          </h2>
+          <div className="divider mb-8 md:mb-10 max-w-xs mx-auto"></div>
+          <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
+            Our long-term vision is to build a recurring-membership community of successful professionals throughout Florida, beginning in South Florida and expanding into Miami, Fort Lauderdale, Boca Raton, Naples, Tampa, Orlando, and Jacksonville.
+          </p>
+          <p className="text-base md:text-lg text-gray-400 mb-10 md:mb-12 leading-relaxed">
+            The goal is not simply to host events. The goal is to build a trusted, high-value community where accomplished individuals can form meaningful personal, professional, and business relationships.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+            {['Miami', 'Fort Lauderdale', 'Boca Raton', 'Naples', 'Tampa', 'Orlando', 'Jacksonville'].map((city, idx) => (
+              <span key={idx} className="border border-gold border-opacity-30 rounded-full px-4 md:px-5 py-2 text-sm text-gray-300 bg-gold/5 tracking-wide">
+                {city}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Application Form Section */}
-      <section id="apply" className="py-20 md:py-32 px-6 md:px-12">
+      <section id="apply" className="py-20 md:py-32 px-6 md:px-12 bg-gray-950">
         <div className="max-w-3xl mx-auto fade-in">
           <div className="text-center mb-12 md:mb-16">
             <p className="text-gold text-xs md:text-sm tracking-widest mb-4 uppercase">✦ MEMBERSHIP APPLICATION ✦</p>
@@ -992,19 +1036,36 @@ export default function ExecutiveCounsel() {
                 </div>
 
                 <div>
-                  <label className="block text-sm gold-text tracking-widest mb-3">INTEREST TYPE</label>
+                  <label className="block text-sm gold-text tracking-widest mb-3">INTERESTED IN THE INAUGURAL EVENT?</label>
                   <select
-                    name="interestType"
-                    value={formData.interestType}
+                    name="attendInaugural"
+                    value={formData.attendInaugural}
                     onChange={handleFormChange}
                     className="input-field w-full"
+                    required
                   >
-                    <option value="membership">Membership</option>
-                    <option value="launch">Launch Event Invitation</option>
-                    <option value="sponsorship">Sponsorship</option>
-                    <option value="dinner">Private Dinner</option>
+                    <option value="" disabled>Please select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="maybe">Tell me more</option>
                   </select>
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-sm gold-text tracking-widest mb-3">INTERESTED IN SPONSORSHIP OPPORTUNITIES?</label>
+                <select
+                  name="interestSponsorship"
+                  value={formData.interestSponsorship}
+                  onChange={handleFormChange}
+                  className="input-field w-full"
+                  required
+                >
+                  <option value="" disabled>Please select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="maybe">Tell me more</option>
+                </select>
               </div>
 
               <div>
@@ -1068,12 +1129,20 @@ export default function ExecutiveCounsel() {
               <p className="gold-text text-xs font-bold tracking-widest mb-4">CONTACT</p>
               <div className="space-y-3 text-sm text-gray-400">
                 <div className="flex items-center gap-2">
-                  <Phone size={16} className="text-gold" />
+                  <Phone size={16} className="text-gold flex-shrink-0" />
                   <span>(305) 555-0123</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail size={16} className="text-gold" />
-                  <span>membership@executivecounsel.com</span>
+                  <Mail size={16} className="text-gold flex-shrink-0" />
+                  <span>Membership@ExecutiveCounsel.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Globe size={16} className="text-gold flex-shrink-0" />
+                  <span>ExecutiveCounsel.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Instagram size={16} className="text-gold flex-shrink-0" />
+                  <span>@ExecutiveCounsel</span>
                 </div>
               </div>
             </div>
@@ -1082,7 +1151,7 @@ export default function ExecutiveCounsel() {
           <div className="divider mb-8"></div>
 
           <div className="text-center text-gray-600 text-xs tracking-widest">
-            <p>© 2024 THE EXECUTIVE COUNSEL. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 THE EXECUTIVE COUNSEL. ALL RIGHTS RESERVED.</p>
             <p className="mt-2">Private membership counsel. Invitation and application required.</p>
           </div>
         </div>
