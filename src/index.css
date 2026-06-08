@@ -628,6 +628,11 @@ button:focus-visible {
     margin-top: 5rem;
   }
 
+  /* Mobile only: lift the eyebrow tagline higher so it sits better */
+  main > .site-hero:not(.page-banner) .hero-sub {
+    margin-top: -3rem;
+  }
+
   main > .site-hero:not(.page-banner) .btn-row {
     margin-top: 1.25rem;
   }

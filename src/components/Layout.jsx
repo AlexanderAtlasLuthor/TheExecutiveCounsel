@@ -45,6 +45,10 @@ export default function Layout() {
               alt="The Executive Counsel"
               className="header-mark h-12 md:h-14 w-auto"
             />
+            <span className="header-wordmark ml-3 text-sm md:text-lg font-semibold tracking-[0.2em] whitespace-nowrap">
+              <span className="text-white">EXECUTIVE</span>{' '}
+              <span className="text-gold">COUNSEL</span>
+            </span>
           </Link>
 
           {/* Desktop Menu */}
