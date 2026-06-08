@@ -8,9 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        gold: '#d4af37',
-        'gold-light': '#f4d03f',
-        charcoal: '#1a1a1a',
+        gold: '#FFFCD6',
+        'gold-light': '#FFFCD6',
+        black: '#00183B',
+        charcoal: '#0a1f3f',
         // Warm neutral grays (no blue tint) — pure black & gold palette
         gray: {
           50: '#faf9f7',

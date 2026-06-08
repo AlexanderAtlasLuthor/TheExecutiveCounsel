@@ -50,13 +50,13 @@ const experienceCards = [
 export default function Home() {
   return (
     <>
-      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#15110a] via-black to-black">
+      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#012a5e] via-black to-black">
         <img
           src="/gold-circle-hero.png"
           alt=""
           aria-hidden="true"
           className="absolute top-[40%] md:top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none"
-          style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
+          style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(255, 252, 214, 0.25))' }}
         />
 
         <div className="absolute inset-0 hero-glass z-[1]" aria-hidden="true" />
@@ -71,7 +71,7 @@ export default function Home() {
               alt="The Executive Circle"
               className="hero-logo-glow w-28 sm:w-36 md:w-44 h-auto"
             />
-            <span className="mt-5 md:mt-6 tracking-[0.25em] text-xl sm:text-2xl md:text-3xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+            <span className="mt-5 md:mt-6 tracking-[0.25em] text-2xl sm:text-4xl md:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
               <span className="text-white">THE EXECUTIVE</span>{' '}
               <span className="gold-accent">CIRCLE</span>
             </span>
