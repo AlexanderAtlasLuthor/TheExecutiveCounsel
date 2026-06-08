@@ -43,7 +43,7 @@ const experienceCards = [
   {
     icon: ShieldCheck,
     title: 'Membership Standards',
-    description: 'Every layer of the counsel is designed around privacy, professionalism, and trust.',
+    description: 'Every layer of the circle is designed around privacy, professionalism, and trust.',
   },
 ];
 
@@ -68,7 +68,7 @@ export default function Home() {
           <h1 className="fade-in flex justify-center mb-6 md:mb-7" style={{ animationDelay: '0.1s' }}>
             <img
               src="/herologo-transparent.png"
-              alt="The Executive Counsel"
+              alt="The Executive Circle"
               className="hero-logo-glow w-52 sm:w-64 md:w-[20rem] h-auto"
             />
           </h1>
@@ -93,7 +93,7 @@ export default function Home() {
         eyebrow="Now Accepting"
         title="Become a"
         accent="Founding Member"
-        subtitle="The Executive Counsel is accepting a limited number of founding membership applications. Founding members will help shape the culture, standards, and first signature experiences of the counsel."
+        subtitle="The Executive Circle is accepting a limited number of founding membership applications. Founding members will help shape the culture, standards, and first signature experiences of the circle."
         tone="alt"
       >
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -115,7 +115,7 @@ export default function Home() {
 
       <BrandSection
         eyebrow="The Experience"
-        title="A Counsel Built for"
+        title="A Circle Built for"
         accent="Meaningful Access"
         subtitle="Every touchpoint is structured around the same idea: private review, thoughtful introductions, refined experiences, and relationships that can deepen over time."
       >
@@ -134,7 +134,7 @@ export default function Home() {
         eyebrow="Private Review"
         title="Begin With a"
         accent="Membership Inquiry"
-        subtitle="Applications are reviewed privately. Attendance is limited, and membership is extended only when there is clear alignment with the counsel."
+        subtitle="Applications are reviewed privately. Attendance is limited, and membership is extended only when there is clear alignment with the circle."
         actions={[
           { label: 'Begin Your Application', to: '/apply' },
           { label: 'Explore Membership', to: '/membership', variant: 'outline' },

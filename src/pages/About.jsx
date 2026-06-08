@@ -23,7 +23,7 @@ const principles = [
   {
     icon: UsersRound,
     title: 'Peer-Level Rooms',
-    description: 'The counsel is shaped for leaders, builders, professionals, and investors with shared ambition.',
+    description: 'The circle is shaped for leaders, builders, professionals, and investors with shared ambition.',
   },
   {
     icon: Sparkles,
@@ -46,25 +46,25 @@ export default function About() {
     <>
       <PageBanner
         eyebrow="About Us"
-        title="A Private Counsel for"
+        title="A Private Circle for"
         accent="Accomplished Individuals"
         subtitle="A sophisticated, private, and highly curated environment where meaningful relationships develop naturally."
         actions={[
-          { label: 'Meet the Counsel', section: 'first' },
+          { label: 'Meet the Circle', section: 'first' },
           { label: 'Apply to Join', section: 'last' },
         ]}
       />
 
       <BrandSection
-        eyebrow="The Counsel"
+        eyebrow="The Circle"
         title="More Than a Network"
         accent="A Trusted Community"
-        subtitle="The Executive Counsel was created for successful people who have outgrown traditional networking events, casual mixers, and online introductions."
+        subtitle="The Executive Circle was created for successful people who have outgrown traditional networking events, casual mixers, and online introductions."
       >
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-stretch">
           <article className="brand-card p-8 md:p-12 fade-in h-full">
             <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-              The counsel brings together accomplished individuals in a refined setting where introductions are intentional and relationships can mature with context. It is built for people who value substance, privacy, and the quiet confidence of a better room.
+              The circle brings together accomplished individuals in a refined setting where introductions are intentional and relationships can mature with context. It is built for people who value substance, privacy, and the quiet confidence of a better room.
             </p>
             <p className="text-gray-400 text-base md:text-lg leading-relaxed">
               We believe meaningful connection is built on trust, shared values, and mutual respect among peers who have achieved real success.
@@ -98,7 +98,7 @@ export default function About() {
         eyebrow="Member Profile"
         title="Who Belongs"
         accent="In the Room"
-        subtitle="The counsel is intentionally broad in profession and narrow in standard: accomplished people with character, discretion, and a desire to contribute."
+        subtitle="The circle is intentionally broad in profession and narrow in standard: accomplished people with character, discretion, and a desire to contribute."
         tone="alt"
       >
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
@@ -118,7 +118,7 @@ export default function About() {
         eyebrow="Founding Class"
         title="Help Shape the"
         accent="First Member Community"
-        subtitle="Founding members will influence the culture, standards, and first signature experiences of The Executive Counsel."
+        subtitle="Founding members will influence the culture, standards, and first signature experiences of The Executive Circle."
         actions={[
           { label: 'Begin Your Application', to: '/apply' },
           { label: 'View Standards', to: '/standards', variant: 'outline' },

@@ -88,7 +88,7 @@ export default function Apply() {
                 <IconBadge icon={Crown} label="Thank you" className="mb-5" />
                 <h3 className="text-2xl md:text-3xl font-light mb-4">Thank You</h3>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Your inquiry has been received. A representative from The Executive Counsel will review your submission and contact you if selected for the next step.
+                  Your inquiry has been received. A representative from The Executive Circle will review your submission and contact you if selected for the next step.
                 </p>
               </div>
             ) : (
@@ -218,7 +218,7 @@ export default function Apply() {
                   <label className="block text-sm gold-text tracking-widest mb-3">WHY WOULD YOU LIKE TO JOIN?</label>
                   <textarea
                     name="message"
-                    placeholder="Tell us about yourself and why you would like to join The Executive Counsel..."
+                    placeholder="Tell us about yourself and why you would like to join The Executive Circle..."
                     value={formData.message}
                     onChange={handleFormChange}
                     rows="6"
@@ -232,7 +232,7 @@ export default function Apply() {
                 </button>
 
                 <p className="text-center text-gray-500 text-xs tracking-widest">
-                  Private membership counsel. Invitation and application required.
+                  Private membership circle. Invitation and application required.
                 </p>
               </form>
             )}

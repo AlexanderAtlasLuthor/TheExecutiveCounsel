@@ -1,10 +1,10 @@
-# The Executive Counsel - React Application
+# The Executive Circle - React Application
 
 Un sitio web premium y de lujo para una organización privada de membresía exclusiva.
 
 ## 🎯 Descripción
 
-The Executive Counsel es un sitio web completamente personalizado para una organización de membresía privada e invitación exclusiva. Presenta un diseño de lujo con paleta de colores negro, oro y blanco, diseñado específicamente para ejecutivos, empresarios e inversores de alto nivel en South Florida.
+The Executive Circle es un sitio web completamente personalizado para una organización de membresía privada e invitación exclusiva. Presenta un diseño de lujo con paleta de colores negro, oro y blanco, diseñado específicamente para ejecutivos, empresarios e inversores de alto nivel en South Florida.
 
 ## ✨ Características
 
@@ -35,8 +35,8 @@ The Executive Counsel es un sitio web completamente personalizado para una organ
 
 1. **Descomprime el archivo ZIP**
 ```bash
-unzip executive-counsel.zip
-cd executive-counsel
+unzip executive-circle.zip
+cd executive-circle
 ```
 
 2. **Instala las dependencias**
@@ -62,7 +62,7 @@ Los archivos compilados estarán en la carpeta `dist/`
 ## 📁 Estructura del Proyecto
 
 ```
-executive-counsel/
+executive-circle/
 ├── src/
 │   ├── App.jsx           # Componente principal
 │   ├── main.jsx          # Punto de entrada
@@ -160,4 +160,4 @@ Este proyecto es propietario y solo para uso autorizado.
 
 ---
 
-**The Executive Counsel** - Donde las personas exceptionales se reúnen con las personas exceptionales.
+**The Executive Circle** - Donde las personas exceptionales se reúnen con las personas exceptionales.

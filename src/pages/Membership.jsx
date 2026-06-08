@@ -29,7 +29,7 @@ const universalBenefits = [
   {
     icon: CalendarDays,
     title: 'Member Events',
-    description: 'Access to the counsel calendar begins with selective member gatherings.',
+    description: 'Access to the circle calendar begins with selective member gatherings.',
   },
   {
     icon: UsersRound,
@@ -60,7 +60,7 @@ export default function Membership() {
       <BrandSection
         eyebrow="Annual Membership"
         title="Select the"
-        accent="Right Counsel Tier"
+        accent="Right Circle Tier"
         subtitle="Every level is structured with the same core standard: a private community, curated experiences, and a room of accomplished peers."
       >
         <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
@@ -118,7 +118,7 @@ export default function Membership() {
         eyebrow="Included Standard"
         title="Every Tier Begins With"
         accent="The Same Foundation"
-        subtitle="Membership level changes access and involvement, but the underlying standard remains consistent across the counsel."
+        subtitle="Membership level changes access and involvement, but the underlying standard remains consistent across the circle."
         tone="alt"
       >
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">

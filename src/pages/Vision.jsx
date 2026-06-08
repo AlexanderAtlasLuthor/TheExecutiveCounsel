@@ -40,7 +40,7 @@ const roadmap = [
     icon: CalendarRange,
     phase: 'Phase Two',
     title: 'Signature Calendar',
-    description: 'Establish recurring receptions, dinners, and member experiences that define the counsel.',
+    description: 'Establish recurring receptions, dinners, and member experiences that define the circle.',
   },
   {
     icon: MapPinned,
@@ -85,7 +85,7 @@ export default function Vision() {
         eyebrow="Expansion Roadmap"
         title="From South Florida"
         accent="To a Broader Network"
-        subtitle="Expansion will be measured and standards-led, beginning in South Florida and growing only where the counsel can preserve quality."
+        subtitle="Expansion will be measured and standards-led, beginning in South Florida and growing only where the circle can preserve quality."
         tone="alt"
       >
         <div className="grid lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
@@ -116,7 +116,7 @@ export default function Vision() {
         eyebrow="Founding Class"
         title="Be Part of the"
         accent="First Chapter"
-        subtitle="Founding members help shape the culture before the counsel expands into a broader Florida network."
+        subtitle="Founding members help shape the culture before the circle expands into a broader Florida network."
         actions={[
           { label: 'Be Part of the Founding Class', to: '/apply' },
           { label: 'View Events', to: '/events', variant: 'outline' },

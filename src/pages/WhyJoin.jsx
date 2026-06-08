@@ -43,7 +43,7 @@ const featureCards = [
   {
     icon: Plane,
     title: 'Luxury Travel',
-    description: 'Select retreats and travel concepts extend the counsel beyond a single evening.',
+    description: 'Select retreats and travel concepts extend the circle beyond a single evening.',
   },
   {
     icon: Handshake,
@@ -71,7 +71,7 @@ const membershipRhythm = [
   {
     icon: Handshake,
     title: 'Build Better Relationships',
-    description: 'The counsel gives members recurring opportunities to become known, trusted, and remembered.',
+    description: 'The circle gives members recurring opportunities to become known, trusted, and remembered.',
   },
 ];
 
@@ -93,7 +93,7 @@ export default function WhyJoin() {
         eyebrow="Member Value"
         title="Access With"
         accent="Purpose and Structure"
-        subtitle="The Executive Counsel is designed to make the room itself more valuable: who attends, why they are there, and how relationships are introduced all matter."
+        subtitle="The Executive Circle is designed to make the room itself more valuable: who attends, why they are there, and how relationships are introduced all matter."
       >
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {featureCards.map((feature, idx) => (
@@ -128,7 +128,7 @@ export default function WhyJoin() {
         eyebrow="Membership"
         title="Choose the"
         accent="Right Level of Access"
-        subtitle="Each level is built for a different relationship to the counsel, from essential access to elevated concierge-level involvement."
+        subtitle="Each level is built for a different relationship to the circle, from essential access to elevated concierge-level involvement."
         actions={[
           { label: 'Explore Membership Levels', to: '/membership' },
           { label: 'Review Standards', to: '/standards', variant: 'outline' },

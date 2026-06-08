@@ -1,4 +1,4 @@
-// Shared content for The Executive Counsel site.
+// Shared content for The Executive Circle site.
 // Centralized so every page renders from a single source of truth.
 
 export const navigationLinks = [
@@ -74,7 +74,7 @@ export const features = [
 
 export const events = [
   {
-    title: 'Executive Counsel Soirée',
+    title: 'Executive Circle Soirée',
     frequency: 'Monthly',
     description: 'An elegant evening of cocktails, networking, and curated introductions for accomplished professionals.',
     iconKey: 'wine',

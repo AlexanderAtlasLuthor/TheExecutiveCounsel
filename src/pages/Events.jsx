@@ -76,7 +76,7 @@ export default function Events() {
         eyebrow="Event Standard"
         title="What Makes the"
         accent="Room Different"
-        subtitle="The Executive Counsel event model is built around the details that make people want to stay in the room and return to the next one."
+        subtitle="The Executive Circle event model is built around the details that make people want to stay in the room and return to the next one."
         tone="alt"
       >
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
@@ -102,7 +102,7 @@ export default function Events() {
         eyebrow="Inaugural Reception"
         title="Start With the"
         accent="Launch Experience"
-        subtitle="The inaugural reception introduces the counsel to South Florida through a curated, invitation-only guest list."
+        subtitle="The inaugural reception introduces the circle to South Florida through a curated, invitation-only guest list."
         actions={[
           { label: 'See the Reception', to: '/launch' },
           { label: 'Request Membership', to: '/apply', variant: 'outline' },

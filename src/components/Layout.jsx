@@ -37,17 +37,17 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center h-20 md:h-24">
           <Link
             to="/"
-            aria-label="The Executive Counsel — Home"
+            aria-label="The Executive Circle — Home"
             className="cursor-pointer flex items-center shrink-0 mr-4"
           >
             <img
               src="/ec-mark-transparent.png"
-              alt="The Executive Counsel"
+              alt="The Executive Circle"
               className="header-mark h-12 md:h-14 w-auto"
             />
             <span className="header-wordmark ml-3 text-sm md:text-lg font-semibold tracking-[0.2em] whitespace-nowrap">
               <span className="text-white">EXECUTIVE</span>{' '}
-              <span className="text-gold">COUNSEL</span>
+              <span className="text-gold">CIRCLE</span>
             </span>
           </Link>
 
@@ -125,7 +125,7 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 mb-12 md:mb-16">
             <div>
-              <p className="gold-text text-sm font-bold tracking-widest mb-4">THE EXECUTIVE COUNSEL</p>
+              <p className="gold-text text-sm font-bold tracking-widest mb-4">THE EXECUTIVE CIRCLE</p>
               <p className="text-gray-500 text-sm leading-relaxed">
                 Where accomplished people meet accomplished people.
               </p>
@@ -161,15 +161,15 @@ export default function Layout() {
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2 min-w-0">
                   <Mail size={16} className="text-gold flex-shrink-0" />
-                  <span className="min-w-0 break-all">Membership@ExecutiveCounsel.com</span>
+                  <span className="min-w-0 break-all">Membership@ExecutiveCircle.com</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <Globe size={16} className="text-gold flex-shrink-0" />
-                  <span>ExecutiveCounsel.com</span>
+                  <span>ExecutiveCircle.com</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2">
                   <Instagram size={16} className="text-gold flex-shrink-0" />
-                  <span>@ExecutiveCounsel</span>
+                  <span>@ExecutiveCircle</span>
                 </div>
               </div>
             </div>
@@ -178,8 +178,8 @@ export default function Layout() {
           <div className="divider mb-8"></div>
 
           <div className="text-center text-gray-600 text-xs tracking-widest">
-            <p>© 2026 THE EXECUTIVE COUNSEL. ALL RIGHTS RESERVED.</p>
-            <p className="mt-2">Private membership counsel. Invitation and application required.</p>
+            <p>© 2026 THE EXECUTIVE CIRCLE. ALL RIGHTS RESERVED.</p>
+            <p className="mt-2">Private membership circle. Invitation and application required.</p>
           </div>
         </div>
       </footer>

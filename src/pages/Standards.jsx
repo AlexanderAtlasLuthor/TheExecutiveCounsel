@@ -29,7 +29,7 @@ const principles = [
   {
     icon: BadgeCheck,
     title: 'Trust',
-    description: 'The counsel is strongest when members know the room has been carefully reviewed.',
+    description: 'The circle is strongest when members know the room has been carefully reviewed.',
   },
 ];
 
@@ -51,7 +51,7 @@ export default function Standards() {
         eyebrow="The Standard"
         title="Membership Is"
         accent="Earned With Alignment"
-        subtitle="The Executive Counsel is intentionally curated to preserve privacy, quality, professionalism, and trust among members."
+        subtitle="The Executive Circle is intentionally curated to preserve privacy, quality, professionalism, and trust among members."
       >
         <div className="quote-panel p-8 md:p-12 fade-in max-w-4xl mx-auto text-center">
           <p className="text-xl md:text-2xl italic text-gray-300 leading-relaxed">

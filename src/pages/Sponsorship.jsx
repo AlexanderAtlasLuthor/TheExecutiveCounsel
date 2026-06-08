@@ -52,7 +52,7 @@ export default function Sponsorship() {
         eyebrow="Ideal Partners"
         title="Brands That Belong"
         accent="In the Room"
-        subtitle="The best sponsors serve the same audience The Executive Counsel brings together: accomplished people with discerning standards and meaningful purchasing influence."
+        subtitle="The best sponsors serve the same audience The Executive Circle brings together: accomplished people with discerning standards and meaningful purchasing influence."
       >
         <div className="brand-card p-8 md:p-10 fade-in mb-8 md:mb-10">
           <IconBadge icon={Building2} label="Ideal sponsors" className="mb-6 mx-auto" />
@@ -80,7 +80,7 @@ export default function Sponsorship() {
         eyebrow="Sponsor Tiers"
         title="Choose the"
         accent="Right Partnership Level"
-        subtitle="Each tier is designed to give sponsors clear visibility, refined access, and an appropriate level of recognition within the counsel experience."
+        subtitle="Each tier is designed to give sponsors clear visibility, refined access, and an appropriate level of recognition within the circle experience."
         tone="alt"
       >
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -113,7 +113,7 @@ export default function Sponsorship() {
         eyebrow="Partnership Review"
         title="Discuss a"
         accent="Sponsorship Fit"
-        subtitle="Sponsors are selected for alignment with the counsel, the member audience, and the tone of the experience."
+        subtitle="Sponsors are selected for alignment with the circle, the member audience, and the tone of the experience."
         actions={[
           { label: 'Become a Sponsor', to: '/apply' },
           { label: 'View Launch Reception', to: '/launch', variant: 'outline' },
