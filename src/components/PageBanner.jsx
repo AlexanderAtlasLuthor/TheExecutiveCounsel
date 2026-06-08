@@ -1,6 +1,24 @@
 import React from 'react';
 import HeroNextButton from './HeroNextButton';
 
+// Smoothly scroll from the hero to one of the page's content sections.
+// `which` = 'first' targets the first section after the hero,
+// 'last' targets the final section (the page's call-to-action).
+function scrollToPageSection(event, which) {
+  const hero = event.currentTarget.closest('.site-hero');
+  if (!hero) return;
+
+  const target =
+    which === 'last' ? hero.parentElement?.lastElementChild : hero.nextElementSibling;
+  if (!target || target === hero) return;
+
+  const headerHeight =
+    document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
+  const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+
+  window.scrollTo({ top: targetTop, behavior: 'smooth' });
+}
+
 // Consistent styled header band for every inner page.
 export default function PageBanner({ eyebrow, title, accent, subtitle }) {
   return (
@@ -16,6 +34,11 @@ export default function PageBanner({ eyebrow, title, accent, subtitle }) {
       <div className="absolute inset-0 hero-overlay z-[2]" aria-hidden="true" />
 
       <div className="relative z-10 max-w-4xl mx-auto fade-in">
+        {/* Mobile only: shared tagline to match the home hero. */}
+        <p className="hero-sub sm:hidden text-gold text-[0.7rem] tracking-[0.35em] mb-5 uppercase">
+          ✦ Private Membership Organization ✦
+        </p>
+
         {eyebrow && (
           <p className="hero-sub text-gold text-[0.7rem] md:text-xs tracking-[0.35em] mb-6 uppercase">✦ {eyebrow} ✦</p>
         )}
@@ -34,6 +57,25 @@ export default function PageBanner({ eyebrow, title, accent, subtitle }) {
             {subtitle}
           </p>
         )}
+
+        {/* Mobile only: two buttons (like the home hero) that scroll to
+            sections of this page. */}
+        <div className="btn-row sm:hidden mt-8 fade-in">
+          <button
+            type="button"
+            onClick={(event) => scrollToPageSection(event, 'first')}
+            className="btn-gold btn-standard rounded-sm"
+          >
+            Explore This Page
+          </button>
+          <button
+            type="button"
+            onClick={(event) => scrollToPageSection(event, 'last')}
+            className="btn-outline btn-standard rounded-sm"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
       <HeroNextButton />
     </section>
