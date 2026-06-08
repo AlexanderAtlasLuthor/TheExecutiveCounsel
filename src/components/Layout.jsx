@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Mail, Phone, Globe, Instagram, Menu, X } from 'lucide-react';
+import { Mail, Phone, Globe, Instagram, Menu, X, ChevronDown } from 'lucide-react';
 import { navigationLinks } from '../data';
+
+const DESKTOP_VISIBLE_LINK_COUNT = 5;
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -13,11 +15,17 @@ function ScrollToTop() {
 
 export default function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreMenuOpen, setMoreMenuOpen] = useState(false);
+  const moreMenuRef = useRef(null);
   const { pathname } = useLocation();
+  const desktopLinks = navigationLinks.slice(0, DESKTOP_VISIBLE_LINK_COUNT);
+  const moreLinks = navigationLinks.slice(DESKTOP_VISIBLE_LINK_COUNT);
+  const hasActiveMoreLink = moreLinks.some((link) => pathname === link.path);
 
-  // Close the mobile menu whenever the route changes.
+  // Close open menus whenever the route changes.
   useEffect(() => {
     setMobileMenuOpen(false);
+    setMoreMenuOpen(false);
   }, [pathname]);
 
   // Prevent body scroll when mobile menu is open.
@@ -27,6 +35,30 @@ export default function Layout() {
       document.body.style.overflow = 'unset';
     };
   }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!moreMenuOpen) return undefined;
+
+    const closeOnOutsideClick = (event) => {
+      if (!moreMenuRef.current?.contains(event.target)) {
+        setMoreMenuOpen(false);
+      }
+    };
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMoreMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', closeOnOutsideClick);
+    document.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsideClick);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [moreMenuOpen]);
 
   return (
     <div className="bg-[#00183B] text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
@@ -53,7 +85,7 @@ export default function Layout() {
 
           {/* Desktop Menu */}
           <div className="hidden xl:flex gap-x-4 2xl:gap-x-7 items-center shrink-0">
-            {navigationLinks.map((link) => (
+            {desktopLinks.map((link) => (
               <NavLink
                 key={link.name}
                 to={link.path}
@@ -63,6 +95,39 @@ export default function Layout() {
                 {link.name}
               </NavLink>
             ))}
+            {moreLinks.length > 0 && (
+              <div className="desktop-more-menu" ref={moreMenuRef}>
+                <button
+                  type="button"
+                  className={`nav-link more-menu-trigger ${hasActiveMoreLink || moreMenuOpen ? 'active' : ''}`}
+                  aria-expanded={moreMenuOpen}
+                  aria-haspopup="menu"
+                  onClick={() => setMoreMenuOpen((open) => !open)}
+                >
+                  <span>More</span>
+                  <ChevronDown
+                    size={16}
+                    strokeWidth={1.8}
+                    className={`more-menu-icon ${moreMenuOpen ? 'open' : ''}`}
+                    aria-hidden="true"
+                  />
+                </button>
+                {moreMenuOpen && (
+                  <div className="more-menu-panel" role="menu">
+                    {moreLinks.map((link) => (
+                      <NavLink
+                        key={link.name}
+                        to={link.path}
+                        className={({ isActive }) => `more-menu-link ${isActive ? 'active' : ''}`}
+                        role="menuitem"
+                      >
+                        {link.name}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
             <span className="nav-rule" aria-hidden="true" />
             <Link
               to="/apply"
