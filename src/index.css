@@ -637,20 +637,17 @@ button:focus-visible {
     margin-top: 1.25rem;
   }
 
-  /* Mobile only: pull inner-page hero content up so the tagline is
-     clearly visible near the top instead of buried in the vertical center */
-  .page-banner {
-    align-items: flex-start;
-  }
-
+  /* Mobile only: vertically center inner-page hero content so its layout
+     matches the home hero (content balanced in the middle of the screen,
+     ring centered behind it) instead of clustering at the top */
   .page-banner .banner-content {
-    margin-top: -1.5rem;
+    margin-top: -2rem;
   }
 
-  /* Mobile only: raise the gold ring so the title sits in its center,
-     matching the now top-aligned hero content */
+  /* Mobile only: center the gold ring behind the hero content to match the
+     home hero's ring placement */
   .page-banner-ring {
-    top: 26%;
+    top: 40%;
   }
 
   .hero-next-button {
