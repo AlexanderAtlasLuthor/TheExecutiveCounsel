@@ -83,6 +83,10 @@ export default function WhyJoin() {
         title="More Than Networking."
         accent="More Than Social Events."
         subtitle="Every membership unlocks a world of curated experiences built around trust, access, and genuine connection."
+        actions={[
+          { label: 'Why Members Join', section: 'first' },
+          { label: 'Choose Your Level', section: 'last' },
+        ]}
       />
 
       <BrandSection

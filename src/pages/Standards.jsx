@@ -41,6 +41,10 @@ export default function Standards() {
         title="Designed for Quality,"
         accent="Privacy & Exclusivity"
         subtitle="Membership is application-based and reviewed by our Membership Committee to preserve trust among members."
+        actions={[
+          { label: 'View the Standards', section: 'first' },
+          { label: 'Apply for Review', section: 'last' },
+        ]}
       />
 
       <BrandSection

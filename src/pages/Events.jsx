@@ -41,6 +41,10 @@ export default function Events() {
         title="Exclusive"
         accent="Events & Gatherings"
         subtitle="From intimate dinners to black-tie galas, every gathering is crafted for accomplished members."
+        actions={[
+          { label: 'See the Experiences', section: 'first' },
+          { label: 'Request an Invitation', section: 'last' },
+        ]}
       />
 
       <BrandSection

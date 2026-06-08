@@ -58,6 +58,10 @@ export default function Vision() {
         title="Building South Florida's Premier"
         accent="Executive Membership Community"
         subtitle="The long-term goal is a trusted, recurring membership community where accomplished people can form meaningful personal, professional, and business relationships."
+        actions={[
+          { label: 'Explore the Vision', section: 'first' },
+          { label: 'Join the Founding Class', section: 'last' },
+        ]}
       />
 
       <BrandSection

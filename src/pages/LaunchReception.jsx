@@ -39,6 +39,10 @@ export default function LaunchReception() {
         title="The Executive Counsel"
         accent="Inaugural Reception"
         subtitle="An invitation-only launch bringing together a curated guest list of South Florida's accomplished leaders."
+        actions={[
+          { label: 'Reception Details', section: 'first' },
+          { label: 'Request Access', section: 'last' },
+        ]}
       />
 
       <BrandSection

@@ -42,6 +42,10 @@ export default function Sponsorship() {
         title="Sponsorship"
         accent="& Partnership Tiers"
         subtitle="Premium opportunities for brands and firms seeking to connect with affluent professionals, executives, investors, and community leaders."
+        actions={[
+          { label: 'View Partnership Tiers', section: 'first' },
+          { label: 'Discuss Sponsorship', section: 'last' },
+        ]}
       />
 
       <BrandSection

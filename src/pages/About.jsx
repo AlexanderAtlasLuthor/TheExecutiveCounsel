@@ -49,6 +49,10 @@ export default function About() {
         title="A Private Counsel for"
         accent="Accomplished Individuals"
         subtitle="A sophisticated, private, and highly curated environment where meaningful relationships develop naturally."
+        actions={[
+          { label: 'Meet the Counsel', section: 'first' },
+          { label: 'Apply to Join', section: 'last' },
+        ]}
       />
 
       <BrandSection

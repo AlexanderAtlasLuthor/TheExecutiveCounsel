@@ -68,6 +68,10 @@ export default function Apply() {
         title="Apply for"
         accent="Membership"
         subtitle="Applications are reviewed privately. Attendance is limited. Membership is not guaranteed."
+        actions={[
+          { label: 'Start Your Application', section: 'first' },
+          { label: 'View Membership Levels', to: '/membership' },
+        ]}
       />
 
       <BrandSection

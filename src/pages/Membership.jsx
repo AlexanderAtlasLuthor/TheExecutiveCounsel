@@ -51,6 +51,10 @@ export default function Membership() {
         title="Choose Your"
         accent="Level of Access"
         subtitle="Three tiers of membership, each designed to match your ambitions for connection, access, and influence."
+        actions={[
+          { label: 'View Membership Levels', section: 'first' },
+          { label: 'Request Review', section: 'last' },
+        ]}
       />
 
       <BrandSection

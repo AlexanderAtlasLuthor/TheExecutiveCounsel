@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import HeroNextButton from './HeroNextButton';
 
 // Smoothly scroll from the hero to one of the page's content sections.
@@ -19,8 +20,14 @@ function scrollToPageSection(event, which) {
   window.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 
+// Sensible fallback when a page does not pass its own buttons.
+const defaultActions = [
+  { label: 'Explore This Page', section: 'first' },
+  { label: 'Get Started', section: 'last' },
+];
+
 // Consistent styled header band for every inner page.
-export default function PageBanner({ eyebrow, title, accent, subtitle }) {
+export default function PageBanner({ eyebrow, title, accent, subtitle, actions = defaultActions }) {
   return (
     <section className="page-banner site-hero relative overflow-hidden px-6 md:px-12 py-12 md:py-14 text-center">
       <img
@@ -58,24 +65,37 @@ export default function PageBanner({ eyebrow, title, accent, subtitle }) {
           </p>
         )}
 
-        {/* Mobile only: two buttons (like the home hero) that scroll to
-            sections of this page. */}
-        <div className="btn-row sm:hidden mt-8 fade-in">
-          <button
-            type="button"
-            onClick={(event) => scrollToPageSection(event, 'first')}
-            className="btn-gold btn-standard rounded-sm"
-          >
-            Explore This Page
-          </button>
-          <button
-            type="button"
-            onClick={(event) => scrollToPageSection(event, 'last')}
-            className="btn-outline btn-standard rounded-sm"
-          >
-            Get Started
-          </button>
-        </div>
+        {/* Mobile only: two buttons (like the home hero), tailored per page.
+            A button with `to` navigates; one with `section` scrolls to a
+            section of this page. */}
+        {actions.length > 0 && (
+          <div className="btn-row sm:hidden mt-8 fade-in">
+            {actions.map((action, index) => {
+              const variantClass = (action.variant || (index === 0 ? 'gold' : 'outline')) === 'outline'
+                ? 'btn-outline'
+                : 'btn-gold';
+
+              return action.to ? (
+                <Link
+                  key={action.label}
+                  to={action.to}
+                  className={`btn-standard rounded-sm ${variantClass}`}
+                >
+                  {action.label}
+                </Link>
+              ) : (
+                <button
+                  key={action.label}
+                  type="button"
+                  onClick={(event) => scrollToPageSection(event, action.section)}
+                  className={`btn-standard rounded-sm ${variantClass}`}
+                >
+                  {action.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
       </div>
       <HeroNextButton />
     </section>
