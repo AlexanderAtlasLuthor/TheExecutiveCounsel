@@ -647,6 +647,12 @@ button:focus-visible {
     margin-top: -1.5rem;
   }
 
+  /* Mobile only: raise the gold ring so the title sits in its center,
+     matching the now top-aligned hero content */
+  .page-banner-ring {
+    top: 26%;
+  }
+
   .hero-next-button {
     bottom: 0.95rem;
     width: 2.75rem;
