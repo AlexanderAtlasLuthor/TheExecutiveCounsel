@@ -65,12 +65,16 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-3xl px-6 md:px-12 -translate-y-6 md:-translate-y-8">
           <p className="text-gold text-[0.7rem] md:text-xs tracking-[0.35em] mb-5 md:mb-6 uppercase fade-in hero-sub">✦ Private Membership Organization ✦</p>
 
-          <h1 className="fade-in flex justify-center mb-6 md:mb-7" style={{ animationDelay: '0.1s' }}>
+          <h1 className="fade-in flex flex-col items-center mb-6 md:mb-7" style={{ animationDelay: '0.1s' }}>
             <img
-              src="/herologo-transparent.png"
+              src="/ec-mark-transparent.png"
               alt="The Executive Circle"
-              className="hero-logo-glow w-52 sm:w-64 md:w-[20rem] h-auto"
+              className="hero-logo-glow w-28 sm:w-36 md:w-44 h-auto"
             />
+            <span className="mt-5 md:mt-6 tracking-[0.25em] text-xl sm:text-2xl md:text-3xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+              <span className="text-white">THE EXECUTIVE</span>{' '}
+              <span className="gold-accent">CIRCLE</span>
+            </span>
           </h1>
 
           <h2 className="hero-title text-2xl sm:text-3xl md:text-4xl font-light text-white mb-5 md:mb-6 tracking-wide leading-snug fade-in" style={{ fontFamily: "'Playfair Display', Georgia, serif", animationDelay: '0.2s' }}>
