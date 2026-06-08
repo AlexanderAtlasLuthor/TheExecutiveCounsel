@@ -50,7 +50,7 @@ const experienceCards = [
 export default function Home() {
   return (
     <>
-      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#012a5e] via-black to-black">
+      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#012a5e] via-[#00183B] to-[#00183B]">
         <img
           src="/gold-circle-hero.png"
           alt=""
@@ -67,14 +67,10 @@ export default function Home() {
 
           <h1 className="fade-in flex flex-col items-center mb-6 md:mb-7" style={{ animationDelay: '0.1s' }}>
             <img
-              src="/ec-mark-transparent.png"
+              src="/herohomecircle.png"
               alt="The Executive Circle"
-              className="hero-logo-glow w-28 sm:w-36 md:w-44 h-auto"
+              className="hero-logo-glow w-56 sm:w-72 md:w-80 lg:w-96 h-auto"
             />
-            <span className="mt-5 md:mt-6 tracking-[0.25em] text-2xl sm:text-4xl md:text-5xl font-light" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              <span className="text-white">THE EXECUTIVE</span>{' '}
-              <span className="gold-accent">CIRCLE</span>
-            </span>
           </h1>
 
           <h2 className="hero-title text-2xl sm:text-3xl md:text-4xl font-light text-white mb-5 md:mb-6 tracking-wide leading-snug fade-in" style={{ fontFamily: "'Playfair Display', Georgia, serif", animationDelay: '0.2s' }}>

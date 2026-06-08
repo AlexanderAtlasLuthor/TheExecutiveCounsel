@@ -29,7 +29,7 @@ export default function Layout() {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="bg-black text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
+    <div className="bg-[#00183B] text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
       <ScrollToTop />
 
       {/* Sticky Navigation */}
@@ -121,7 +121,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-amber-700 border-opacity-20 py-12 md:py-16 px-6 md:px-12 text-center md:text-left">
+      <footer className="border-t border-gold border-opacity-20 py-12 md:py-16 px-6 md:px-12 text-center md:text-left">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 mb-12 md:mb-16">
             <div>
