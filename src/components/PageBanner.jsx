@@ -40,7 +40,7 @@ export default function PageBanner({ eyebrow, title, accent, subtitle, actions =
       <div className="absolute inset-0 hero-glass z-[1]" aria-hidden="true" />
       <div className="absolute inset-0 hero-overlay z-[2]" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-4xl mx-auto fade-in">
+      <div className="banner-content relative z-10 max-w-4xl mx-auto fade-in">
         {/* Mobile only: shared tagline to match the home hero. */}
         <p className="hero-sub sm:hidden text-gold text-[0.7rem] tracking-[0.35em] mb-5 uppercase">
           ✦ Private Membership Organization ✦

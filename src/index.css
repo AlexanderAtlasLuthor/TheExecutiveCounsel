@@ -630,11 +630,21 @@ button:focus-visible {
 
   /* Mobile only: lift the eyebrow tagline higher so it sits better */
   main > .site-hero:not(.page-banner) .hero-sub {
-    margin-top: -3rem;
+    margin-top: -4.5rem;
   }
 
   main > .site-hero:not(.page-banner) .btn-row {
     margin-top: 1.25rem;
+  }
+
+  /* Mobile only: pull inner-page hero content up so the tagline is
+     clearly visible near the top instead of buried in the vertical center */
+  .page-banner {
+    align-items: flex-start;
+  }
+
+  .page-banner .banner-content {
+    margin-top: -1.5rem;
   }
 
   .hero-next-button {
