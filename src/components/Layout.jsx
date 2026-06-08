@@ -34,11 +34,11 @@ export default function Layout() {
 
       {/* Sticky Navigation */}
       <nav className="site-header fixed top-0 w-full z-50">
-        <div className="max-w-7xl mx-auto px-5 md:px-12 flex justify-between items-center h-20 md:h-24">
+        <div className="max-w-[1700px] mx-auto px-5 md:px-8 2xl:px-12 flex justify-between items-center gap-6 h-20 md:h-24">
           <Link
             to="/"
             aria-label="The Executive Circle — Home"
-            className="cursor-pointer flex items-center shrink-0 mr-4"
+            className="cursor-pointer flex items-center shrink-0"
           >
             <img
               src="/ec-mark-transparent.png"
@@ -52,7 +52,7 @@ export default function Layout() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex gap-5 xl:gap-8 items-center">
+          <div className="hidden xl:flex gap-x-4 2xl:gap-x-7 items-center shrink-0">
             {navigationLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -66,7 +66,7 @@ export default function Layout() {
             <span className="nav-rule" aria-hidden="true" />
             <Link
               to="/apply"
-              className="btn-gold px-6 py-2.5 text-xs tracking-[0.18em] whitespace-nowrap rounded-sm"
+              className="btn-gold px-5 py-2.5 text-xs tracking-[0.16em] whitespace-nowrap rounded-sm"
             >
               APPLY NOW
             </Link>
@@ -74,7 +74,7 @@ export default function Layout() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gold p-2 hover:opacity-70 transition"
+            className="xl:hidden text-gold p-2 hover:opacity-70 transition"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -87,7 +87,7 @@ export default function Layout() {
       {/* Mobile Menu — rendered outside <nav> so the header's backdrop-filter
           does not trap this fixed overlay behind the page content. */}
       {mobileMenuOpen && (
-        <div className="mobile-menu-overlay lg:hidden">
+        <div className="mobile-menu-overlay xl:hidden">
           <div className="px-6 md:px-8 py-12 space-y-8 max-h-screen overflow-y-auto">
             {navigationLinks.map((link) => (
               <NavLink
