@@ -50,13 +50,13 @@ const experienceCards = [
 export default function Home() {
   return (
     <>
-      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#012a5e] via-[#00183B] to-[#00183B]">
+      <section className="site-hero relative flex items-center justify-center pt-12 pb-14 overflow-hidden bg-gradient-to-b from-[#1c1c1c] via-[#000000] to-[#000000]">
         <img
           src="/gold-circle-hero.png"
           alt=""
           aria-hidden="true"
           className="absolute top-[40%] md:top-1/2 left-1/2 w-[26rem] sm:w-[36rem] md:w-[52rem] lg:w-[58rem] aspect-square object-contain pointer-events-none select-none"
-          style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(255, 252, 214, 0.25))' }}
+          style={{ animation: 'heroCircleFloat 9s ease-in-out infinite', filter: 'drop-shadow(0 0 35px rgba(212, 175, 55, 0.25))' }}
         />
 
         <div className="absolute inset-0 hero-glass z-[1]" aria-hidden="true" />

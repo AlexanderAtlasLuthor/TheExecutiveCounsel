@@ -61,7 +61,7 @@ export default function Layout() {
   }, [moreMenuOpen]);
 
   return (
-    <div className="bg-[#00183B] text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
+    <div className="bg-[#000000] text-white min-h-screen font-sans" style={{ fontFamily: "'Montserrat', 'Lato', system-ui, sans-serif" }}>
       <ScrollToTop />
 
       {/* Sticky Navigation */}

@@ -73,7 +73,7 @@ export default function Membership() {
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 {tier.label && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 md:px-6 py-2 text-xs font-bold tracking-widest rounded-full bg-gold text-[#00183B]">
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 md:px-6 py-2 text-xs font-bold tracking-widest rounded-full bg-gold text-[#000000]">
                     {tier.label}
                   </div>
                 )}
